@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Array_IO {
+
+
+	public static void main(String[] args) {
+	
+		// creating an two dimensional array
+		int [][] arr = new int[3][3];
+		System.out.println(arr.length);
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Give the inputs for 2D array:");
+		
+		// taking input from user
+		// outer loop for traversing the row
+		for(int row=0; row < arr.length; row++) {
+			// inner loop for traversing the column
+			for(int col=0; col < arr[row].length; col++) {
+				arr[row][col] = sc.nextInt();
+			}
+		}
+		
+		// output of the 2D array
+		// traversing the row
+		for (int row=0; row < arr.length; row++) {
+			
+			// traversing the column
+			for (int col=0; col < arr[row].length; col++) {
+				System.out.print(arr[row][col] + " ");
+			}
+			System.out.println();
+		}
+	}
+
+}
