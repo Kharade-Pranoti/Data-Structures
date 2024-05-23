@@ -32,6 +32,16 @@ public class Array_IO {
 			}
 			System.out.println();
 		}
+
+	// output - alternative option to print 2D array
+	//	for(int row=0; row < arr.length; row++) {
+	//		System.out.println(Arrays.toString(arr[row]));
+	//	}
+		
+		// enhanced for loop : for-each
+		for(int[] a : arr) {
+			System.out.println(Arrays.toString(a));
+		}
 	}
 
 }
