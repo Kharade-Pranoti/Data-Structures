@@ -1,0 +1,45 @@
+package com.arrays;
+
+/*
+ * find the peak element using recursion
+ * Approach:
+ * 1. find the middle element of an array -- low / high
+ * 2. check if middle element is a peak element
+ * 3. otherwise check if left or right element element is greater than middle element
+ * 4. If --> left element is greater - consider the left part of an array and check each and every element
+ * 5. Else --> right element is greater - consider the right part of an array
+ */
+
+// Time complexity - O(log n) - n is the number of elements in array
+// Space complexity - O(log n) - as recursion is there, implicit stack is used
+public class FindPeakElementByRecursion {
+
+	public static void main(String[] args) {
+		int arr[] = { 1, 3, 20, 4, 1, 0 };
+		int size = arr.length;
+		System.out.println("Peak Element " + findPeak(arr, size));
+
+	}
+	
+	public static int findPeak(int a[], int size) {
+		return findPeakElement(a, 0, size-1, size);
+	}
+
+	static int findPeakElement(int arr[], int low, int high, int n) {
+		// check if middle element is peak element
+		int mid = low + (high - low) / 2;
+		
+		if((mid==0 || arr[mid-1] <= arr[mid]) && (mid==n-1 || arr[mid+1] <= arr[mid]))
+			return arr[mid];
+		
+		// check if left neighbor of middle element is greater
+		else if(mid>0 && arr[mid-1] > arr[mid])
+			findPeakElement(arr, low,  (mid-1),  n);
+		
+		// check if right neighbor of middle element is greater
+		else
+		return findPeakElement(arr, (mid+1),  high,  n);
+		return 0;
+		
+	}
+}
