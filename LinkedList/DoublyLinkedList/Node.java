@@ -1,4 +1,4 @@
-package com.doubly.linked.lists;
+
 
 public class Node {
 	private int data;
